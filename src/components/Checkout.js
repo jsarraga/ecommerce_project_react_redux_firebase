@@ -1,16 +1,14 @@
 import React from 'react';
-import CheckoutForm from './CheckoutForm';
+import CheckoutForm2 from './CheckoutForm2';
 
 
 
 const Checkout = (props) =>{
-    const handleCheckout = values => {
-        console.log(values)
-    }
+
 
     return(
         <div>
-            <CheckoutForm onSubmit={handleCheckout}/>
+            <CheckoutForm2/>
         </div>
     )
 }

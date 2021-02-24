@@ -85,18 +85,23 @@ CheckoutForm = reduxForm({
     form: 'checkout',
 })(CheckoutForm);
 
-
+// checking state if form fields saved
 // const selector = formValueSelector('checkout')
-// CheckoutForm = connect(
-//     state => {
+
+// CheckoutForm = connect(state => {
 //         const countryValue = selector(state, 'country')
 //         const cityValue = selector(state, "city")
+//         const first = selector(state, 'firstName')
 //         return{
 //             countryValue,
-//             cityValue
+//             cityValue,
+//             first
 //         }
 //     }
 // )(CheckoutForm)
+
+
+
 
 
 

@@ -15,7 +15,7 @@ const Home = (props) => {
                 <div className="card-image">
                     <img src={item.img} alt={item.title}/>
                     <span className="card-title">{item.title}</span>
-                    <span to="/" className="btn-floating halfway-fab waves-effect waves-light red" onClick={()=>{handleClick(item.id)}}><i className="material-icons"> add</i></span>
+                    <button to="/" className="btn-floating halfway-fab waves-effect waves-light red" onClick={()=>{handleClick(item.id)}}><i className="material-icons"> add</i></button>
                 </div>
 
                 <div className="card-content">

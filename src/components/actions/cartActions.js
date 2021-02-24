@@ -1,4 +1,3 @@
-
 import { ADD_TO_CART,REMOVE_ITEM,ADD_QUANTITY,SUB_QUANTITY } from './action-types/cart-actions'
 
 export const addToCart = (id) => {
