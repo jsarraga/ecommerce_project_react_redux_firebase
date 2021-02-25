@@ -4,32 +4,42 @@ import {addToCart} from './actions/cartActions';
 
 
 const Home = (props) => {
-
+    const header = {
+        textAlign: 'center',
+        fontSize: '30px',
+    }
+    const productContainer = {
+        display: 'flex',
+        justifyContent: 'center'
+    }
+    const productCard = {
+        margin: '10px',
+        textAlign: 'center'
+    }
+   
     const handleClick = (id) => {
         props.addToCart(id);
     }
 
-
     let itemList = props.items.map(item=>(
-        <div className="card" key={item.id}>
+        <div style={productCard} className="card" key={item.id}>
                 <div className="card-image">
-                    <img src={item.img} alt={item.title}/>
+                    <img style={{height: '350px'}} src={item.img} alt={item.title}/>
                     <span className="card-title">{item.title}</span>
-                    <button to="/" className="btn-floating halfway-fab waves-effect waves-light red" onClick={()=>{handleClick(item.id)}}><i className="material-icons"> add</i></button>
+                    <p><b>${item.price.toFixed(2)}</b></p>
                 </div>
-
-                <div className="card-content">
+            
+                <div style={{minHeight: '150px'}} className="card-content">
                     <p>{item.desc}</p>
-                    <p><b>Price: {item.price}$</b></p>
                 </div>
+                <p><button style={{marginBottom: '10px'}}to="/" className="btn-floating halfway-fab waves-effect waves-light red" onClick={()=>{handleClick(item.id)}}><i className="material-icons"> add</i></button></p>
          </div>
     ))
 
-
     return(
         <div className='container'>
-            <h3>Children's clothing</h3>
-            <div>
+            <h3 style={header} >boys</h3>
+            <div style={productContainer}>
                 {itemList}
             </div>
         </div>

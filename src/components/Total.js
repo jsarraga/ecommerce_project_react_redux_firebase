@@ -24,7 +24,7 @@ class Total extends Component{
         <div className="container">
             <div className = "collection">
                 <li className="collection-item">
-                    <label>
+                    <label >
                         <input type="checkbox" ref="shipping" onChange={this.handleChecked} />
                         <span>Shipping(+$8.99)</span>
                     </label>
@@ -32,7 +32,6 @@ class Total extends Component{
                 <li className="collection-item"><b>Total: ${this.props.total.toFixed(2)} </b></li>
             </div>
             <div className="checkout">
-                <button className="waves-effect waves-light btn">Checkout</button>
             </div>
         </div>
     )

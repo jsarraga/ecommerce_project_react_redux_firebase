@@ -5,7 +5,8 @@ import './index.css'
 import cartReducer from './components/reducers/cartReducer';
 import formReducer from './components/reducers/formReducer'
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import reduxThunk from "redux-thunk";
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 
 const rootReducer = combineReducers({
@@ -14,7 +15,7 @@ const rootReducer = combineReducers({
     
 })
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, {}, applyMiddleware(reduxThunk));
 console.log("index.js - store =", store.getState())
 
 ReactDOM.render(

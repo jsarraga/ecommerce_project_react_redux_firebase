@@ -1,7 +1,5 @@
-import { ADD_ORDER } from './action-types/form-actions'
+import { ordersRef } from '../../firebase/firebase';
 
-export const addOrder = (order) => {
-    return{
-        type: ADD_ORDER,
-        order }
-}
+export const addOrder = newOrder => async dispatch => {
+    ordersRef.push().set(newOrder);
+  };
