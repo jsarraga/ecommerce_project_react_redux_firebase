@@ -1,6 +1,7 @@
 import React, { useState }from 'react';
-import { addOrder} from './actions/formActions'
+import { addOrder} from './actions/formActions';
 import { connect } from 'react-redux';
+import Confirmation from './Confirmation';
 
 
 const CheckoutForm = (props) => {
@@ -25,9 +26,10 @@ const CheckoutForm = (props) => {
     const [state, setState] = useState('')
     const [postal, setPostal] = useState('')
     const [phone, setPhone] = useState('')
+    const [isOpen, setIsOpen] = useState(false)
+
 
     function handleSubmit() {
-
 
         let order = {
             "country": country,
@@ -43,6 +45,7 @@ const CheckoutForm = (props) => {
         }
         console.log("order - in checkoutForm onsubmit", order)
         props.addOrder(order)
+        setIsOpen(true)
     }
      
     return (
@@ -68,6 +71,12 @@ const CheckoutForm = (props) => {
                 <label className="label">Phone Number</label>
                 <input onChange={(e)=>setPhone(e.target.value)} name="phone" component="input" type="number"/>
                 <p><button style={{marginTop: '10px'}} onClick={(e) => handleSubmit()} className="button is-link">Submit</button></p>
+            </div>
+            <div>
+                <Confirmation isOpen={isOpen} onClose={(e) => setIsOpen(false)} >
+                    <h3>Thank you!</h3>
+                    <i>your order is being proccessed</i>
+                </Confirmation>
             </div>
         </div>
     )
